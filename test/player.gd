@@ -36,3 +36,7 @@ func _process(_delta):
 	else:
 		_animation_player.play("Idle")
 		
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
