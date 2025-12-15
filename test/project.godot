@@ -1,0 +1,20 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="test"
+run/main_scene="uid://kw8ovq1qk74x"
+config/features=PackedStringArray("4.5", "Forward Plus")
+
+[display]
+
+window/size/mode=2
+window/stretch/scale=2.5

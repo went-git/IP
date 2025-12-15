@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://kw8ovq1qk74x"]
+
+[ext_resource type="Script" uid="uid://cewst88tqwu66" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://b4wwavuhtpk1d" path="res://tile.png" id="2_fj7yv"]
+[ext_resource type="Script" uid="uid://b2ndwxn33sdx1" path="res://player.gd" id="3_036b0"]
+[ext_resource type="Texture2D" uid="uid://c2tn6h8251xc" path="res://(new)Walk_cycle_project.png" id="4_aqk2v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
+texture = ExtResource("2_fj7yv")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+
+[sub_resource type="TileSet" id="TileSet_f3sb7"]
+tile_size = Vector2i(17, 17)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tlwt5")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
+size = Vector2(12, 29)
+
+[sub_resource type="Animation" id="Animation_dwbse"]
+resource_name = "Idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_036b0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_aqk2v"]
+resource_name = "Walk_cycle"
+length = 0.9875
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwbse"]
+_data = {
+&"Idle": SubResource("Animation_dwbse"),
+&"RESET": SubResource("Animation_036b0"),
+&"Walk_cycle": SubResource("Animation_aqk2v")
+}
+
+[node name="World" type="Node"]
+script = ExtResource("1_aqk2v")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="TileMap" type="TileMap" parent="TileMapLayer"]
+physics_interpolation_mode = 2
+tile_set = SubResource("TileSet_f3sb7")
+format = 2
+layer_0/tile_data = PackedInt32Array(131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 131066, 0, 0, 131067, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 131065, 0, 0, 6, 0, 0, -65530, 0, 0, 131064, 0, 0, 131063, 0, 0, 131062, 0, 0, 131061, 0, 0)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("3_036b0")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(0, 3)
+texture = ExtResource("4_aqk2v")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_aqk2v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_dwbse")
+}
+autoplay = "Idle"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(3, 3)
