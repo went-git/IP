@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2tn6h8251xc"
-path="res://.godot/imported/(new)Walk_cycle_project.png-67c0b48ce8a19d4b658c7ddcf20c5983.ctex"
+uid="uid://bqoo232hvxxux"
+path="res://.godot/imported/test_room.png-8f4d49c67864c322777f3d6eef1ffea1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://(new)Walk_cycle_project.png"
-dest_files=["res://.godot/imported/(new)Walk_cycle_project.png-67c0b48ce8a19d4b658c7ddcf20c5983.ctex"]
+source_file="res://img/test_room.png"
+dest_files=["res://.godot/imported/test_room.png-8f4d49c67864c322777f3d6eef1ffea1.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4wwavuhtpk1d"
-path="res://.godot/imported/tile.png-baaba1be10903bf7158b8c1ae2716cf4.ctex"
+uid="uid://crffvn4k7fcbw"
+path="res://.godot/imported/Walk_cycle_project.png-f4e9faed6452569c9827b656cbc5b393.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://png/tile.png"
-dest_files=["res://.godot/imported/tile.png-baaba1be10903bf7158b8c1ae2716cf4.ctex"]
+source_file="res://img/Walk_cycle_project.png"
+dest_files=["res://.godot/imported/Walk_cycle_project.png-f4e9faed6452569c9827b656cbc5b393.ctex"]
 
 [params]
 

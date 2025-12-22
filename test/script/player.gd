@@ -2,18 +2,29 @@ extends CharacterBody2D
 
 @export var speed: float = 70.0
 @export var gravity: float = 980.0
-@export var interaction_range: float = 50.0  # Дистанция взаимодействия
-
 @onready var _animation_player = $AnimationPlayer
-@onready var _sprite = $Sprite2D
+@onready var label = $Label
 
-var interactable_object: Node2D = null      # Текущий объект для взаимодействия
+var near_dresser: Area2D = null
+
 
 func _ready():
-	# Подключаем сигналы для взаимодействия
-	$InteractionArea.area_entered.connect(_on_area_entered)
-	$InteractionArea.area_exited.connect(_on_area_exited)
+	label.hide()
+
+func _on_interact_area_entered(area: Area2D):
+	# Запоминаем тумбочку, с которой взаимодействуем
+	near_dresser = area
+
+func _on_interact_area_exited(area: Area2D):
+	# Если вышли из зоны текущей тумбочки
+	if near_dresser == area:
+		near_dresser = null
+		label.hide()
+
 func _physics_process(delta):
+	if Input.is_action_just_pressed("interact") and near_dresser != null:
+		show_label("Тумбочка...")
+	
 	# Гравитация
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -32,48 +43,27 @@ func _physics_process(delta):
 	velocity.x = direction * speed
 	move_and_slide()
 
-func _process(_delta):
-	# Обработка нажатия клавиши взаимодействия
-	if Input.is_action_just_pressed("interact") and interactable_object:
-		interact_with_object()
+func show_label(text: String):
+	label.text = text
+	label.show()
 	
-	# Анимации движения
+	# Запускаем таймер для скрытия надписи
+	await get_tree().create_timer(3.0).timeout
+	label.hide()
+
+func _process(_delta):
 	if Input.is_key_pressed(KEY_D):
 		_animation_player.play("Walk_cycle")
 		# Сбрасываем отражение при движении вправо
-		_sprite.flip_h = false
+		$Sprite2D.flip_h = false
 	elif Input.is_key_pressed(KEY_A):
 		_animation_player.play("Walk_cycle")
 		# Отзеркаливаем спрайт при движении влево
-		_sprite.flip_h = true
+		$Sprite2D.flip_h = true
 	else:
 		_animation_player.play("Idle")
+		
 
-# Обработка ввода для взаимодействия (опционально)
-func _on_area_entered(area: Area2D):
-	# Проверяем, является ли объект интерактивным
-	var object_to_check = area
-	
-	# Проверяем саму area и ее родителя
-	if not area.is_in_group("interactable"):
-		object_to_check = area.get_parent()
-	
-	# Если нашли интерактивный объект
-	if object_to_check and object_to_check.is_in_group("interactable"):
-		interactable_object = object_to_check
-		print("Обнаружен предмет: ", interactable_object.name)
 
-func _on_area_exited(area: Area2D):
-	# Проверяем, вышел ли тот же объект
-	var object_to_check = area
-	if not area.is_in_group("interactable"):
-		object_to_check = area.get_parent()
-	
-	if object_to_check == interactable_object:
-		interactable_object = null
-		print("Предмет больше не в зоне")
-
-func interact_with_object():
-	if interactable_object and interactable_object.has_method("interact"):
-		# Вызываем метод interact у предмета
-		interactable_object.interact(self)
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
