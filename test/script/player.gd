@@ -8,6 +8,8 @@ extends CharacterBody2D
 var near_dresser: Area2D = null
 var near_dresser1: Area2D = null
 var near_dresser2: Area2D = null
+var near_dresser3: Area2D = null
+var near_dresser4: Area2D = null
 
 func _remember_scene7(area: Area2D):
 	near_dresser1 = area
@@ -15,7 +17,28 @@ func _forget_scene7(area: Area2D):
 	# Если вышли из зоны текущей тумбочки
 	if near_dresser1 == area:
 		near_dresser1 = null
+
+
+
+func _remember_scene8(area: Area2D):
+	near_dresser3 = area
+func _forget_scene8(area: Area2D):
+	# Если вышли из зоны текущей тумбочки
+	if near_dresser3 == area:
+		near_dresser3 = null
 		
+
+
+
+func _remember_scene9(area: Area2D):
+	near_dresser4 = area
+func _forget_scene9(area: Area2D):
+	# Если вышли из зоны текущей тумбочки
+	if near_dresser4 == area:
+		near_dresser4 = null
+
+
+
 func _remember_back(area: Area2D):
 	near_dresser2 = area
 func _forget_back(area: Area2D):
@@ -27,6 +50,7 @@ func _forget_back(area: Area2D):
 
 func _ready():
 	label.hide()
+	
 
 func _on_interact_area_entered(area: Area2D):
 	# Запоминаем тумбочку, с которой взаимодействуем
@@ -45,6 +69,15 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact") and near_dresser1 != null:
 		#get_tree().change_scene_to_file('res://scenes/class_7.tscn')
 		ChangeScene.change_scene(ChangeScene.class_7)
+		
+	if Input.is_action_just_pressed("interact") and near_dresser3 != null:
+		#get_tree().change_scene_to_file('res://scenes/class_7.tscn')
+		ChangeScene.change_scene(ChangeScene.class_8)
+		
+	if Input.is_action_just_pressed("interact") and near_dresser4 != null:
+		#get_tree().change_scene_to_file('res://scenes/class_7.tscn')
+		ChangeScene.change_scene(ChangeScene.class_9)
+		
 		
 	if Input.is_action_just_pressed("interact") and near_dresser2 != null:
 		#get_tree().change_scene_to_file('res://scenes/world.tscn')

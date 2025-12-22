@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dn7ty8m3j3axm" path="res://scenes/back.gd" id="4_uip2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qk4b"]
-size = Vector2(22.5, 34.5)
+size = Vector2(26.25, 38.25)
 
 [node name="Class7" type="Node2D"]
 
@@ -19,11 +19,12 @@ texture = ExtResource("1_4qk4b")
 visible = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_lqcja")]
+position = Vector2(-11, 0)
 up_direction = Vector2(0.99999976, -0.00074239034)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_uip2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-11.25, -3.75)
+position = Vector2(-11, -7)
 shape = SubResource("RectangleShape2D_4qk4b")

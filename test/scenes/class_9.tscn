@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c16nejougfl74"]
+
+[ext_resource type="Texture2D" uid="uid://jsg2i0ux8nut" path="res://img/9th_class.png" id="1_oxwv6"]
+[ext_resource type="PackedScene" uid="uid://bbupx38heo3ve" path="res://scenes/tile_map_layer.tscn" id="2_sllwb"]
+[ext_resource type="PackedScene" uid="uid://daa4lrya26aas" path="res://scenes/character_body_2d.tscn" id="3_6dpwa"]
+[ext_resource type="Script" uid="uid://dn7ty8m3j3axm" path="res://scenes/back.gd" id="4_oxwv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qihg0"]
+size = Vector2(25, 37)
+
+[node name="class_9" type="Node2D"]
+
+[node name="9ThClass" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -24)
+texture = ExtResource("1_oxwv6")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_sllwb")]
+visible = false
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_6dpwa")]
+
+[node name="door_9" type="Area2D" parent="."]
+position = Vector2(1, -24)
+script = ExtResource("4_oxwv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_9"]
+position = Vector2(-0.5, 16.5)
+shape = SubResource("RectangleShape2D_qihg0")
