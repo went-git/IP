@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cq3s0wmig0ts2"]
 
-[ext_resource type="Script" uid="uid://cmyw5vc2aj1uu" path="res://button_1.gd" id="1_f4i5j"]
+[ext_resource type="Script" uid="uid://cmyw5vc2aj1uu" path="res://script/button_1.gd" id="1_f4i5j"]
 
 [node name="PopupPanel" type="PopupPanel"]
 oversampling_override = 1.0

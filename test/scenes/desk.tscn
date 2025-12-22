@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://daa8ii7y6h200"]
+
+[ext_resource type="Script" uid="uid://bkpmtbyratfqh" path="res://scenes/desk.gd" id="1_0iqh6"]
+[ext_resource type="Texture2D" uid="uid://b4wwavuhtpk1d" path="res://png/tile.png" id="2_em11a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_em11a"]
+size = Vector2(29.421135, 21.05611)
+
+[node name="desk" type="CharacterBody2D"]
+light_mask = 2
+collision_layer = 2
+script = ExtResource("1_0iqh6")
+
+[node name="Tile" type="Sprite2D" parent="."]
+texture = ExtResource("2_em11a")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(9.536743e-07, -4.7683716e-07)
+rotation = -3.1415925
+scale = Vector2(0.54382664, -0.7598745)
+shape = SubResource("RectangleShape2D_em11a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(9.536743e-07, -4.7683716e-07)
+rotation = -3.1415925
+scale = Vector2(0.54382664, -0.7598745)
+shape = SubResource("RectangleShape2D_em11a")

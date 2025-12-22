@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://n8for2chblxw"]
 
-[ext_resource type="Script" uid="uid://3d0m7rwvcb8k" path="res://b_1.gd" id="1_eptv1"]
+[ext_resource type="Script" uid="uid://3d0m7rwvcb8k" path="res://script/b_1.gd" id="1_eptv1"]
 
 [node name="Button" type="Button"]
 texture_filter = 1

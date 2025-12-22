@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://kw8ovq1qk74x"]
 
-[ext_resource type="Script" uid="uid://cewst88tqwu66" path="res://world.gd" id="1_aqk2v"]
-[ext_resource type="Texture2D" uid="uid://b4wwavuhtpk1d" path="res://tile.png" id="2_fj7yv"]
-[ext_resource type="Script" uid="uid://b2ndwxn33sdx1" path="res://player.gd" id="3_036b0"]
-[ext_resource type="Texture2D" uid="uid://c2tn6h8251xc" path="res://(new)Walk_cycle_project.png" id="4_aqk2v"]
-[ext_resource type="Texture2D" uid="uid://bqoo232hvxxux" path="res://test_room.png" id="5_036b0"]
-[ext_resource type="PackedScene" uid="uid://n8for2chblxw" path="res://b1.tscn" id="6_dwbse"]
+[ext_resource type="Script" uid="uid://cewst88tqwu66" path="res://script/world.gd" id="1_i7141"]
+[ext_resource type="Texture2D" uid="uid://bqoo232hvxxux" path="res://png/test_room.png" id="2_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://b4wwavuhtpk1d" path="res://png/tile.png" id="3_7r4gi"]
+[ext_resource type="Script" uid="uid://b2ndwxn33sdx1" path="res://script/player.gd" id="4_w7kh3"]
+[ext_resource type="Texture2D" uid="uid://c2tn6h8251xc" path="res://png/(new)Walk_cycle_project.png" id="5_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://daa8ii7y6h200" path="res://scenes/desk.tscn" id="7_jhx03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
-texture = ExtResource("2_fj7yv")
+texture = ExtResource("3_7r4gi")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 
@@ -76,29 +76,37 @@ _data = {
 }
 
 [node name="World" type="Node"]
-script = ExtResource("1_aqk2v")
+script = ExtResource("1_i7141")
+
+[node name="desk" parent="." instance=ExtResource("7_jhx03")]
+position = Vector2(20, 0)
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 1
 
 [node name="TestRoom" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-11, -24)
-texture = ExtResource("5_036b0")
+texture = ExtResource("2_4mrxx")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+light_mask = 3
+visibility_layer = 3
 
 [node name="TileMap" type="TileMap" parent="TileMapLayer"]
 physics_interpolation_mode = 2
-visible = false
 tile_set = SubResource("TileSet_f3sb7")
 format = 2
-layer_0/tile_data = PackedInt32Array(131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 131066, 0, 0, 131067, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 131065, 0, 0, 131064, 0, 0, 131063, 0, 0, 131062, 0, 0, 131061, 0, 0, 65525, 0, 0, -11, 0, 0, 65527, 0, 0, -9, 0, 0, 65543, 0, 0, 7, 0, 0, -65529, 0, 0)
+layer_0/tile_data = PackedInt32Array(65527, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 6, 0, 0)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("3_036b0")
+collision_mask = 2
+script = ExtResource("4_w7kh3")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(0, 3)
-texture = ExtResource("4_aqk2v")
+texture = ExtResource("5_e3hyu")
 hframes = 9
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D/Sprite2D"]
@@ -116,14 +124,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_dwbse")
 }
 autoplay = "Idle"
-
-[node name="Button" parent="." instance=ExtResource("6_dwbse")]
-offset_top = -29.0
-offset_bottom = 2.0
-
-[node name="TextureButton" type="TextureButton" parent="Button"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 27.0
-offset_right = 108.0
-offset_bottom = 67.0
