@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://kw8ovq1qk74x"]
+[gd_scene load_steps=12 format=3 uid="uid://kw8ovq1qk74x"]
 
 [ext_resource type="Script" uid="uid://cewst88tqwu66" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://b4wwavuhtpk1d" path="res://tile.png" id="2_fj7yv"]
 [ext_resource type="Script" uid="uid://b2ndwxn33sdx1" path="res://player.gd" id="3_036b0"]
 [ext_resource type="Texture2D" uid="uid://c2tn6h8251xc" path="res://(new)Walk_cycle_project.png" id="4_aqk2v"]
-[ext_resource type="Texture2D" uid="uid://bqoo232hvxxux" path="res://test_room.png" id="5_036b0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
 texture = ExtResource("2_fj7yv")
@@ -81,10 +80,9 @@ script = ExtResource("1_aqk2v")
 
 [node name="TileMap" type="TileMap" parent="TileMapLayer"]
 physics_interpolation_mode = 2
-visible = false
 tile_set = SubResource("TileSet_f3sb7")
 format = 2
-layer_0/tile_data = PackedInt32Array(131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 131066, 0, 0, 131067, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 131065, 0, 0, 6, 0, 0, -65530, 0, 0, 131064, 0, 0, 131063, 0, 0, 131062, 0, 0, 131061, 0, 0, 65525, 0, 0, -11, 0, 0)
+layer_0/tile_data = PackedInt32Array(131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 131066, 0, 0, 131067, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 131065, 0, 0, 6, 0, 0, -65530, 0, 0, 131064, 0, 0, 131063, 0, 0, 131062, 0, 0, 131061, 0, 0)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("3_036b0")
@@ -107,22 +105,3 @@ autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3, 3)
-
-[node name="Button" type="Button" parent="."]
-offset_left = 11.0
-offset_top = -13.0
-offset_right = 41.0
-offset_bottom = 12.0
-
-[node name="Label" type="Label" parent="Button"]
-layout_mode = 0
-offset_left = 7.0
-offset_right = 31.0
-offset_bottom = 23.0
-text = "b1"
-
-[node name="TestRoom" type="Sprite2D" parent="."]
-show_behind_parent = true
-position = Vector2(-13.999994, -36.499992)
-scale = Vector2(1.359375, 1.4453124)
-texture = ExtResource("5_036b0")
