@@ -1,72 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://kw8ovq1qk74x"]
+[gd_scene load_steps=9 format=3 uid="uid://kw8ovq1qk74x"]
 
 [ext_resource type="Script" uid="uid://cewst88tqwu66" path="res://script/world.gd" id="1_qfnet"]
 [ext_resource type="Texture2D" uid="uid://bqoo232hvxxux" path="res://img/test_room.png" id="2_i7141"]
 [ext_resource type="PackedScene" uid="uid://bbupx38heo3ve" path="res://scenes/tile_map_layer.tscn" id="3_qfnet"]
 [ext_resource type="Script" uid="uid://cndcyeffxpbbp" path="res://script/interaction_zone.gd" id="4_7r4gi"]
-[ext_resource type="Script" uid="uid://b2ndwxn33sdx1" path="res://script/player.gd" id="5_w7kh3"]
-[ext_resource type="Texture2D" uid="uid://c2tn6h8251xc" path="res://img/(new)Walk_cycle_project.png" id="6_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://daa4lrya26aas" path="res://scenes/character_body_2d.tscn" id="5_qfnet"]
+[ext_resource type="Script" uid="uid://xq7r6umhu1we" path="res://scenes/interaction_zone_1.gd" id="7_i7141"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_036b0"]
 size = Vector2(55, 26)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
-size = Vector2(12, 29)
-
-[sub_resource type="Animation" id="Animation_dwbse"]
-resource_name = "Idle"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_036b0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_aqk2v"]
-resource_name = "Walk_cycle"
-length = 0.9875
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 2, 3, 4, 5, 6, 7]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwbse"]
-_data = {
-&"Idle": SubResource("Animation_dwbse"),
-&"RESET": SubResource("Animation_036b0"),
-&"Walk_cycle": SubResource("Animation_aqk2v")
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mrxx"]
+size = Vector2(25, 50)
 
 [node name="classChoice" type="Node"]
 script = ExtResource("1_qfnet")
@@ -87,35 +32,12 @@ script = ExtResource("4_7r4gi")
 position = Vector2(19.5, -1)
 shape = SubResource("RectangleShape2D_036b0")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
-script = ExtResource("5_w7kh3")
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_qfnet")]
+position = Vector2(-120, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture_filter = 1
-position = Vector2(0, 3)
-texture = ExtResource("6_e3hyu")
-hframes = 9
+[node name="InteractionZone1" type="Area2D" parent="."]
+script = ExtResource("7_i7141")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/Sprite2D"]
-position = Vector2(-8.265, -23.8)
-rotation = 3.1415927
-scale = Vector2(5.185, 5.185)
-zoom = Vector2(3, 3)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_aqk2v")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_dwbse")
-}
-autoplay = "Idle"
-
-[node name="Label" type="Label" parent="CharacterBody2D"]
-texture_filter = 1
-offset_left = -14.0
-offset_top = -25.0
-offset_right = 30.0
-offset_bottom = -6.0
-theme_override_font_sizes/font_size = 6
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone1"]
+position = Vector2(-123.5, -2)
+shape = SubResource("RectangleShape2D_4mrxx")

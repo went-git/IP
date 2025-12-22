@@ -6,6 +6,23 @@ extends CharacterBody2D
 @onready var label = $Label
 
 var near_dresser: Area2D = null
+var near_dresser1: Area2D = null
+var near_dresser2: Area2D = null
+
+func _remember_scene7(area: Area2D):
+	near_dresser1 = area
+func _forget_scene7(area: Area2D):
+	# Если вышли из зоны текущей тумбочки
+	if near_dresser1 == area:
+		near_dresser1 = null
+		
+func _remember_back(area: Area2D):
+	near_dresser2 = area
+func _forget_back(area: Area2D):
+	# Если вышли из зоны текущей тумбочки
+	if near_dresser2 == area:
+		near_dresser2 = null
+
 
 
 func _ready():
@@ -24,7 +41,12 @@ func _on_interact_area_exited(area: Area2D):
 func _physics_process(delta):
 	if Input.is_action_just_pressed("interact") and near_dresser != null:
 		show_label("Тумбочка...")
-	
+		
+	if Input.is_action_just_pressed("interact") and near_dresser1 != null:
+		get_tree().change_scene_to_file('res://scenes/class_7.tscn')
+		
+	if Input.is_action_just_pressed("interact") and near_dresser2 != null:
+		get_tree().change_scene_to_file('res://scenes/world.tscn')
 	# Гравитация
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -47,10 +69,6 @@ func show_label(text: String):
 	label.text = text
 	label.show()
 	
-	# Запускаем таймер для скрытия надписи
-	await get_tree().create_timer(3.0).timeout
-	label.hide()
-
 func _process(_delta):
 	if Input.is_key_pressed(KEY_D):
 		_animation_player.play("Walk_cycle")
@@ -63,7 +81,3 @@ func _process(_delta):
 	else:
 		_animation_player.play("Idle")
 		
-
-
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
