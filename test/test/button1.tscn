@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq3s0wmig0ts2"]
+
+[ext_resource type="Script" uid="uid://cmyw5vc2aj1uu" path="res://button_1.gd" id="1_f4i5j"]
+
+[node name="PopupPanel" type="PopupPanel"]
+oversampling_override = 1.0
+title = "какая тумбочка..."
+size = Vector2i(125, 31)
+visible = true
+script = ExtResource("1_f4i5j")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 121.0
+offset_bottom = 27.0
+text = "красный дуб..."
