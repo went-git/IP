@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 100.0
+@export var speed: float = 70.0
 @export var gravity: float = 980.0
 @onready var _animation_player = $AnimationPlayer
 
@@ -36,3 +36,7 @@ func _process(_delta):
 	else:
 		_animation_player.play("Idle")
 		
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
