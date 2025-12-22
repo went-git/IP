@@ -43,10 +43,12 @@ func _physics_process(delta):
 		show_label("Тумбочка...")
 		
 	if Input.is_action_just_pressed("interact") and near_dresser1 != null:
-		get_tree().change_scene_to_file('res://scenes/class_7.tscn')
+		#get_tree().change_scene_to_file('res://scenes/class_7.tscn')
+		ChangeScene.change_scene(ChangeScene.class_7)
 		
 	if Input.is_action_just_pressed("interact") and near_dresser2 != null:
-		get_tree().change_scene_to_file('res://scenes/world.tscn')
+		#get_tree().change_scene_to_file('res://scenes/world.tscn')
+		ChangeScene.change_scene(ChangeScene.class_choice)
 	# Гравитация
 	if not is_on_floor():
 		velocity.y += gravity * delta
