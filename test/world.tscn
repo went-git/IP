@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://kw8ovq1qk74x"]
+[gd_scene load_steps=15 format=3 uid="uid://kw8ovq1qk74x"]
 
 [ext_resource type="Script" uid="uid://cewst88tqwu66" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://b4wwavuhtpk1d" path="res://tile.png" id="2_fj7yv"]
 [ext_resource type="Script" uid="uid://b2ndwxn33sdx1" path="res://player.gd" id="3_036b0"]
 [ext_resource type="Texture2D" uid="uid://c2tn6h8251xc" path="res://(new)Walk_cycle_project.png" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://bqoo232hvxxux" path="res://test_room.png" id="5_036b0"]
-[ext_resource type="PackedScene" uid="uid://n8for2chblxw" path="res://b1.tscn" id="6_dwbse"]
+[ext_resource type="Script" uid="uid://cndcyeffxpbbp" path="res://interaction_zone.gd" id="6_dwbse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
 texture = ExtResource("2_fj7yv")
@@ -16,6 +16,9 @@ texture = ExtResource("2_fj7yv")
 tile_size = Vector2i(17, 17)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tlwt5")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_036b0"]
+size = Vector2(19, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
 size = Vector2(12, 29)
@@ -92,7 +95,15 @@ tile_set = SubResource("TileSet_f3sb7")
 format = 2
 layer_0/tile_data = PackedInt32Array(131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 131066, 0, 0, 131067, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 131065, 0, 0, 131064, 0, 0, 131063, 0, 0, 131062, 0, 0, 131061, 0, 0, 65525, 0, 0, -11, 0, 0, 65527, 0, 0, -9, 0, 0, 65543, 0, 0, 7, 0, 0, -65529, 0, 0)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="InteractionZone" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("6_dwbse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+position = Vector2(18.5, 4)
+shape = SubResource("RectangleShape2D_036b0")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("3_036b0")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -117,13 +128,9 @@ libraries = {
 }
 autoplay = "Idle"
 
-[node name="Button" parent="." instance=ExtResource("6_dwbse")]
-offset_top = -29.0
-offset_bottom = 2.0
-
-[node name="TextureButton" type="TextureButton" parent="Button"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 27.0
-offset_right = 108.0
-offset_bottom = 67.0
+[node name="Label" type="Label" parent="CharacterBody2D"]
+offset_left = -44.0
+offset_top = -37.0
+offset_right = 48.0
+offset_bottom = -14.0
+text = "Тумбочка..."

@@ -3,9 +3,6 @@ var popup_scene = preload("res://button1.tscn")
 func _ready() -> void:
 	# Автоматически находим кнопку (если она есть на сцене)
 	move_child($TestRoom, 0)
-	var button = $Button
-	if button:
-		button.pressed.connect(_on_button_pressed)
 
 
 func _on_button_pressed() -> void:
