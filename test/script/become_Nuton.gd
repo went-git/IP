@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var interaction_type: String = "dialog"  # "dialog" или "teleport"
-@export var dialog_text: String = "Тумбочка..а что в ней.?"
+@export var dialog_text: String = "Дверь..."
 @export var target_scene_path: String = ""
 
 
@@ -23,11 +23,5 @@ func _on_body_exited(body: Node):
 
 # Главный метод взаимодействия - будет переопределяться в дочерних классах
 func interact(player: CharacterBody2D) -> void:
-	var messages = PackedStringArray([
-		"Hi, girl!",
-		"Я - старый мудрец этой деревни.",
-		"У нас большие проблемы...",
-		"Монстры атакуют каждую ночь.",
-		"Поможешь нам?"
-	])
-	player.show_labels(messages)	
+	ChangeScene.change_scene('res://scenes/Nuton_room_sc1.tscn')
+		

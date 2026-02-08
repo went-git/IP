@@ -21,6 +21,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 ChangeScene="*res://scenes/change_scene.tscn"
+UIManager="*uid://brrxjef1blfdv"
 
 [display]
 

@@ -15,9 +15,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact") and current_interactable != null:
 		current_interactable.interact(self)
 	
-	# Гравитация
-	if not is_on_floor():
-		velocity.y += gravity * delta
 	
 	# Движение
 	var direction = 0
@@ -42,9 +39,20 @@ func _process(_delta):
 	else:
 		_animation_player.play("Idle")
 
-func show_label(text: String):
-	label.text = text
-	label.show()
+
+
+
+
+# Для одиночной строки (оставляем как было)
+func show_label(text: String) -> void:
+	if UIManager:
+		UIManager.show_text(text)
+
+# Для массива строк - отдельная функция
+func show_labels(texts: PackedStringArray) -> void:
+	if UIManager:
+		for text in texts:
+			UIManager.show_text(text)
 
 func hide_label():
 	label.hide()

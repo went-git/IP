@@ -64,6 +64,8 @@ _data = {
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1016762651 groups=["player"]]
 collision_mask = 3
 script = ExtResource("1_g2brh")
+speed = null
+gravity = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1078195421]
 texture_filter = 1

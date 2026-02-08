@@ -4,27 +4,38 @@
 [ext_resource type="PackedScene" uid="uid://bbupx38heo3ve" path="res://scenes/tile_map_layer.tscn" id="2_4qk4b"]
 [ext_resource type="PackedScene" uid="uid://daa4lrya26aas" path="res://scenes/character_body_2d.tscn" id="2_lqcja"]
 [ext_resource type="Script" uid="uid://dn7ty8m3j3axm" path="res://script/back.gd" id="4_uip2f"]
+[ext_resource type="Script" uid="uid://tq2t7sq7crcr" path="res://script/become_Nuton.gd" id="5_dhsut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qk4b"]
 size = Vector2(26.25, 38.25)
 
-[node name="Class7" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd4ua"]
+size = Vector2(35, 25)
 
-[node name="7ThClass" type="Sprite2D" parent="."]
+[node name="Class7" type="Node2D" unique_id=427720356]
+
+[node name="7ThClass" type="Sprite2D" parent="." unique_id=1937100243]
 texture_filter = 1
 position = Vector2(-11, -24)
 texture = ExtResource("1_4qk4b")
 
-[node name="TileMapLayer" parent="." instance=ExtResource("2_4qk4b")]
+[node name="TileMapLayer" parent="." unique_id=1484973452 instance=ExtResource("2_4qk4b")]
 visible = false
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_lqcja")]
+[node name="CharacterBody2D" parent="." unique_id=1657050597 instance=ExtResource("2_lqcja")]
 position = Vector2(-11, 0)
 up_direction = Vector2(0.99999976, -0.00074239034)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1543819622]
 script = ExtResource("4_uip2f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1179159338]
 position = Vector2(-11, -7)
 shape = SubResource("RectangleShape2D_4qk4b")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1084948976]
+script = ExtResource("5_dhsut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=220231322]
+position = Vector2(-58, 3)
+shape = SubResource("RectangleShape2D_jd4ua")
