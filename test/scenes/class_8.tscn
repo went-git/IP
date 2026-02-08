@@ -1,32 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://bypntinffi6bn"]
+[gd_scene format=3 uid="uid://bypntinffi6bn"]
 
-[ext_resource type="Script" uid="uid://8or0onpb0bfh" path="res://scenes/class_8.gd" id="1_5jl61"]
 [ext_resource type="PackedScene" uid="uid://bbupx38heo3ve" path="res://scenes/tile_map_layer.tscn" id="1_405wi"]
 [ext_resource type="Texture2D" uid="uid://cokcwx34fx10s" path="res://img/8th_class.png" id="1_e610s"]
 [ext_resource type="PackedScene" uid="uid://daa4lrya26aas" path="res://scenes/character_body_2d.tscn" id="2_e610s"]
-[ext_resource type="Script" uid="uid://dn7ty8m3j3axm" path="res://scenes/back.gd" id="4_otbnv"]
+[ext_resource type="Script" uid="uid://dn7ty8m3j3axm" path="res://script/back.gd" id="4_otbnv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otbnv"]
 size = Vector2(26, 41)
 
-[node name="class_8" type="Node2D"]
-script = ExtResource("1_5jl61")
+[node name="class_8" type="Node2D" unique_id=1406111971]
 
-[node name="8ThClass" type="Sprite2D" parent="."]
+[node name="8ThClass" type="Sprite2D" parent="." unique_id=1177490305]
 texture_filter = 1
 position = Vector2(0, -26)
 texture = ExtResource("1_e610s")
 
-[node name="TileMapLayer" parent="." instance=ExtResource("1_405wi")]
+[node name="TileMapLayer" parent="." unique_id=406570773 instance=ExtResource("1_405wi")]
 visible = false
 position = Vector2(8, -3)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_e610s")]
+[node name="CharacterBody2D" parent="." unique_id=581714402 instance=ExtResource("2_e610s")]
 position = Vector2(0, -2)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=166448602]
 script = ExtResource("4_otbnv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1184546709]
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_otbnv")

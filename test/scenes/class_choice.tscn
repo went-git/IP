@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bbupx38heo3ve" path="res://scenes/tile_map_layer.tscn" id="3_o1e7o"]
 [ext_resource type="PackedScene" uid="uid://daa4lrya26aas" path="res://scenes/character_body_2d.tscn" id="4_kbto5"]
 [ext_resource type="Script" uid="uid://cndcyeffxpbbp" path="res://script/interaction_zone.gd" id="5_g2x5l"]
-[ext_resource type="Script" uid="uid://xq7r6umhu1we" path="res://scenes/door_7.gd" id="6_0pd3r"]
-[ext_resource type="Script" uid="uid://wk2j7ehknio2" path="res://scenes/door_8.gd" id="7_qvxdg"]
-[ext_resource type="Script" uid="uid://bbhdp468ncxeo" path="res://scenes/door_9.gd" id="8_mggwg"]
+[ext_resource type="Script" uid="uid://xq7r6umhu1we" path="res://script/door_7.gd" id="6_0pd3r"]
+[ext_resource type="Script" uid="uid://wk2j7ehknio2" path="res://script/door_8.gd" id="7_qvxdg"]
+[ext_resource type="Script" uid="uid://bbhdp468ncxeo" path="res://script/door_9.gd" id="8_mggwg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_036b0"]
 size = Vector2(37, 29)
