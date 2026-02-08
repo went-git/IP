@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvf3ygbq5y8be"]
+[gd_scene format=3 uid="uid://dvf3ygbq5y8be"]
 
 [ext_resource type="Script" uid="uid://cewst88tqwu66" path="res://script/world.gd" id="1_vew8a"]
 [ext_resource type="Texture2D" uid="uid://bqoo232hvxxux" path="res://img/test_room.png" id="2_6q56e"]
@@ -21,46 +21,46 @@ size = Vector2(26, 49)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbucv"]
 size = Vector2(23, 41)
 
-[node name="classChoice" type="Node"]
+[node name="classChoice" type="Node" unique_id=1262009528]
 script = ExtResource("1_vew8a")
 
-[node name="TestRoom" type="Sprite2D" parent="."]
+[node name="TestRoom" type="Sprite2D" parent="." unique_id=555097232]
 texture_filter = 1
 position = Vector2(-11, -24)
 texture = ExtResource("2_6q56e")
 
-[node name="TileMapLayer" parent="." instance=ExtResource("3_o1e7o")]
+[node name="TileMapLayer" parent="." unique_id=2045603188 instance=ExtResource("3_o1e7o")]
 visible = false
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_kbto5")]
+[node name="CharacterBody2D" parent="." unique_id=1832643498 instance=ExtResource("4_kbto5")]
 position = Vector2(-29, 0)
 
-[node name="drawer" type="Area2D" parent="."]
+[node name="drawer" type="Area2D" parent="." unique_id=2141555933]
 collision_layer = 2
 script = ExtResource("5_g2x5l")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="drawer"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drawer" unique_id=655185959]
 position = Vector2(19.5, 0.5)
 shape = SubResource("RectangleShape2D_036b0")
 
-[node name="door_7" type="Area2D" parent="."]
+[node name="door_7" type="Area2D" parent="." unique_id=1688193240]
 script = ExtResource("6_0pd3r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_7" unique_id=820730405]
 position = Vector2(-123, -1)
 shape = SubResource("RectangleShape2D_4mrxx")
 
-[node name="door_8" type="Area2D" parent="."]
+[node name="door_8" type="Area2D" parent="." unique_id=556792004]
 position = Vector2(-11, -24)
 script = ExtResource("7_qvxdg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_8" unique_id=2118348081]
 position = Vector2(-18, 22)
 shape = SubResource("RectangleShape2D_qfnet")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=96616598]
 script = ExtResource("8_mggwg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1333830500]
 position = Vector2(99.5, -5.5)
 shape = SubResource("RectangleShape2D_tbucv")
