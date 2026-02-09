@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqboqj3is6o7f"
-path="res://.godot/imported/7th_class.png-5f7b17e0027eec37f50d5486b3a8590d.ctex"
+uid="uid://8gdsi7robhpu"
+path="res://.godot/imported/Nuton_model-Sheet.png-054ed186b5dbea5dc570a633297137d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/7th_class.png"
-dest_files=["res://.godot/imported/7th_class.png-5f7b17e0027eec37f50d5486b3a8590d.ctex"]
+source_file="res://img/nuton_sc1/Nuton_model-Sheet.png"
+dest_files=["res://.godot/imported/Nuton_model-Sheet.png-054ed186b5dbea5dc570a633297137d6.ctex"]
 
 [params]
 

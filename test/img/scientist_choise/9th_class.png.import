@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cokcwx34fx10s"
-path="res://.godot/imported/8th_class.png-ab30879869476ba236e8ba40bf42002e.ctex"
+uid="uid://jsg2i0ux8nut"
+path="res://.godot/imported/9th_class.png-1ba4e1a6ae9a4608c809b058b3f138ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/8th_class.png"
-dest_files=["res://.godot/imported/8th_class.png-ab30879869476ba236e8ba40bf42002e.ctex"]
+source_file="res://img/scientist_choise/9th_class.png"
+dest_files=["res://.godot/imported/9th_class.png-1ba4e1a6ae9a4608c809b058b3f138ee.ctex"]
 
 [params]
 

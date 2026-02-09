@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1lgr2xxpr7po"]
 
-[ext_resource type="Texture2D" uid="uid://bqboqj3is6o7f" path="res://img/7th_class.png" id="1_4qk4b"]
+[ext_resource type="Texture2D" uid="uid://bqboqj3is6o7f" path="res://img/scientist_choise/7th_class.png" id="1_4qk4b"]
 [ext_resource type="PackedScene" uid="uid://bbupx38heo3ve" path="res://scenes/tile_map_layer.tscn" id="2_4qk4b"]
 [ext_resource type="PackedScene" uid="uid://daa4lrya26aas" path="res://scenes/character_body_2d.tscn" id="2_lqcja"]
 [ext_resource type="Script" uid="uid://dn7ty8m3j3axm" path="res://script/back.gd" id="4_uip2f"]
@@ -26,16 +26,16 @@ visible = false
 position = Vector2(-11, 0)
 up_direction = Vector2(0.99999976, -0.00074239034)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1543819622]
+[node name="return_door" type="Area2D" parent="." unique_id=1543819622]
 script = ExtResource("4_uip2f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1179159338]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="return_door" unique_id=1179159338]
 position = Vector2(-11, -7)
 shape = SubResource("RectangleShape2D_4qk4b")
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=1084948976]
+[node name="become_newton" type="Area2D" parent="." unique_id=1084948976]
 script = ExtResource("5_dhsut")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=220231322]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="become_newton" unique_id=220231322]
 position = Vector2(-58, 3)
 shape = SubResource("RectangleShape2D_jd4ua")

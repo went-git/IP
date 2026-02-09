@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jsg2i0ux8nut"
-path="res://.godot/imported/9th_class.png-5af2fde4f9258a04ff8a040a795d234f.ctex"
+uid="uid://cehfq8rdu4y7d"
+path="res://.godot/imported/Nuton_college_corridor.png-0268d1ede7722ac9ab2a0030987da4d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/9th_class.png"
-dest_files=["res://.godot/imported/9th_class.png-5af2fde4f9258a04ff8a040a795d234f.ctex"]
+source_file="res://img/nuton_sc1/Nuton_college_corridor.png"
+dest_files=["res://.godot/imported/Nuton_college_corridor.png-0268d1ede7722ac9ab2a0030987da4d9.ctex"]
 
 [params]
 

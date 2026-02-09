@@ -1,26 +1,32 @@
 [gd_scene format=3 uid="uid://cgpqvht52wwdl"]
 
 [ext_resource type="Texture2D" uid="uid://bexmj24qx1mii" path="res://img/nuton_sc1/Nuton_office_room_empty.png" id="1_n3xq1"]
-[ext_resource type="PackedScene" uid="uid://daa4lrya26aas" path="res://scenes/character_body_2d.tscn" id="1_reki4"]
+[ext_resource type="Script" uid="uid://d2ajsdkq0b73t" path="res://script/newton_sc1/nuton_case.gd" id="2_t03xm"]
 [ext_resource type="Texture2D" uid="uid://dw0o4sasewgns" path="res://img/nuton_sc1/Nuton_case.png" id="3_0n4pm"]
+[ext_resource type="Script" uid="uid://cfq3u32hlhyqn" path="res://script/newton_sc1/nuton_green_book.gd" id="3_fbu0t"]
 [ext_resource type="Texture2D" uid="uid://ba7tn3plehp3v" path="res://img/nuton_sc1/Nuton_book_2.png" id="4_0rw1p"]
+[ext_resource type="Script" uid="uid://bdmgn0thucjx4" path="res://script/newton_sc1/nuton_blue_book.gd" id="4_dyclf"]
+[ext_resource type="Script" uid="uid://dbo7gb7gob8kg" path="res://script/newton_sc1/newton_prism.gd" id="5_0rw1p"]
 [ext_resource type="Texture2D" uid="uid://xg3vdqs0qguv" path="res://img/nuton_sc1/Nuton_book.png" id="5_dyclf"]
+[ext_resource type="PackedScene" uid="uid://x3w20lrc6nar" path="res://img/nuton_sc1/newton_sc1.tscn" id="6_0n4pm"]
 [ext_resource type="Texture2D" uid="uid://8nlg4pq3ke7r" path="res://img/nuton_sc1/Nuton_prism.png" id="6_fbu0t"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnxn1"]
-size = Vector2(26.5, 25)
+[ext_resource type="Script" uid="uid://b6srf0bagm1yv" path="res://script/newton_sc1/next_room.gd" id="10_03nh7"]
+[ext_resource type="Script" uid="uid://ceaxo80fhy08s" path="res://script/newton_sc1/bookshelf.gd" id="11_wugke"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0n4pm"]
 size = Vector2(16, 14.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rw1p"]
-size = Vector2(16, 10)
+size = Vector2(16.5, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyclf"]
-size = Vector2(16, 14.5)
+size = Vector2(15, 32.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbu0t"]
-size = Vector2(14.599998, 14.5)
+size = Vector2(14.960003, 30.48276)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t03xm"]
+size = Vector2(33, 20)
 
 [node name="Node2D" type="Node2D" unique_id=319455182]
 
@@ -29,31 +35,8 @@ texture_filter = 1
 position = Vector2(29, -34)
 texture = ExtResource("1_n3xq1")
 
-[node name="Area2D3" type="Area2D" parent="." unique_id=965665533]
-position = Vector2(27, -32)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1975929573]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(-140.75, 41)
-shape = SubResource("RectangleShape2D_fnxn1")
-
-[node name="Area2D2" type="Area2D" parent="." unique_id=668117301]
-position = Vector2(27, -32)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1920423586]
-physics_interpolation_mode = 1
-light_mask = 3
-visibility_layer = 3
-position = Vector2(124, 39)
-shape = SubResource("RectangleShape2D_fnxn1")
-
-[node name="CharacterBody2D" parent="." unique_id=1473085441 instance=ExtResource("1_reki4")]
-position = Vector2(-29, 0)
-
 [node name="Nuton_case" type="Area2D" parent="." unique_id=946678984]
+script = ExtResource("2_t03xm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nuton_case" unique_id=1722602583]
 position = Vector2(-57, -4)
@@ -65,9 +48,10 @@ position = Vector2(-57, -4)
 texture = ExtResource("3_0n4pm")
 
 [node name="Nuton_green_book" type="Area2D" parent="." unique_id=1057575991]
+script = ExtResource("3_fbu0t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nuton_green_book" unique_id=1072094999]
-position = Vector2(9.5, -10)
+position = Vector2(9.75, -0.5)
 shape = SubResource("RectangleShape2D_0rw1p")
 
 [node name="NutonBook2" type="Sprite2D" parent="Nuton_green_book" unique_id=243386422]
@@ -76,9 +60,10 @@ position = Vector2(9, -10)
 texture = ExtResource("4_0rw1p")
 
 [node name="Nuton_blue_book" type="Area2D" parent="." unique_id=1139951023]
+script = ExtResource("4_dyclf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nuton_blue_book" unique_id=1482235501]
-position = Vector2(28, -8)
+position = Vector2(28.5, 0.875)
 shape = SubResource("RectangleShape2D_dyclf")
 
 [node name="NutonBook" type="Sprite2D" parent="Nuton_blue_book" unique_id=443083823]
@@ -87,9 +72,10 @@ position = Vector2(27, -8)
 texture = ExtResource("5_dyclf")
 
 [node name="Nuton_prism_launcher" type="Area2D" parent="." unique_id=450682470]
+script = ExtResource("5_0rw1p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nuton_prism_launcher" unique_id=384735756]
-position = Vector2(49.704548, -11.913463)
+position = Vector2(49.5, -3.000001)
 scale = Vector2(1.1363636, 1.1153846)
 shape = SubResource("RectangleShape2D_fbu0t")
 
@@ -98,3 +84,20 @@ texture_filter = 1
 position = Vector2(49.75, -12.75)
 scale = Vector2(1.1363636, 1.1153846)
 texture = ExtResource("6_fbu0t")
+
+[node name="next room" type="Area2D" parent="." unique_id=2007077314]
+script = ExtResource("10_03nh7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next room" unique_id=1422684158]
+position = Vector2(-83, -7)
+shape = SubResource("RectangleShape2D_t03xm")
+
+[node name="CharacterBody2D" parent="." unique_id=158689498 instance=ExtResource("6_0n4pm")]
+position = Vector2(-20, -1)
+
+[node name="bookshelf" type="Area2D" parent="." unique_id=904594654]
+script = ExtResource("11_wugke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bookshelf" unique_id=793796427]
+position = Vector2(100.5, -2)
+shape = SubResource("RectangleShape2D_t03xm")

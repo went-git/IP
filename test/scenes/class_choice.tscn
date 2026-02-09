@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dvf3ygbq5y8be"]
 
 [ext_resource type="Script" uid="uid://cewst88tqwu66" path="res://script/world.gd" id="1_vew8a"]
-[ext_resource type="Texture2D" uid="uid://bqoo232hvxxux" path="res://img/test_room.png" id="2_6q56e"]
+[ext_resource type="Texture2D" uid="uid://bqoo232hvxxux" path="res://img/scientist_choise/test_room.png" id="2_6q56e"]
 [ext_resource type="PackedScene" uid="uid://bbupx38heo3ve" path="res://scenes/tile_map_layer.tscn" id="3_o1e7o"]
 [ext_resource type="PackedScene" uid="uid://daa4lrya26aas" path="res://scenes/character_body_2d.tscn" id="4_kbto5"]
 [ext_resource type="Script" uid="uid://cndcyeffxpbbp" path="res://script/interaction_zone.gd" id="5_g2x5l"]

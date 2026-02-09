@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c16nejougfl74"]
 
-[ext_resource type="Texture2D" uid="uid://jsg2i0ux8nut" path="res://img/9th_class.png" id="1_oxwv6"]
+[ext_resource type="Texture2D" uid="uid://jsg2i0ux8nut" path="res://img/scientist_choise/9th_class.png" id="1_oxwv6"]
 [ext_resource type="PackedScene" uid="uid://bbupx38heo3ve" path="res://scenes/tile_map_layer.tscn" id="2_sllwb"]
 [ext_resource type="PackedScene" uid="uid://daa4lrya26aas" path="res://scenes/character_body_2d.tscn" id="3_6dpwa"]
 [ext_resource type="Script" uid="uid://dn7ty8m3j3axm" path="res://script/back.gd" id="4_oxwv6"]

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://x3w20lrc6nar"]
+
+[ext_resource type="Script" uid="uid://b2ndwxn33sdx1" path="res://script/player.gd" id="1_wrlej"]
+[ext_resource type="Texture2D" uid="uid://8gdsi7robhpu" path="res://img/nuton_sc1/Nuton_model-Sheet.png" id="1_x1m1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrlej"]
+size = Vector2(12, 29)
+
+[sub_resource type="Animation" id="Animation_dwbse"]
+resource_name = "Idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_036b0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_aqk2v"]
+resource_name = "Walk_cycle"
+length = 0.9875
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8l8rk"]
+_data = {
+&"Idle": SubResource("Animation_dwbse"),
+&"RESET": SubResource("Animation_036b0"),
+&"Walk_cycle": SubResource("Animation_aqk2v")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=158689498 groups=["player"]]
+script = ExtResource("1_wrlej")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=233956044]
+texture_filter = 1
+position = Vector2(0, 3)
+texture = ExtResource("1_x1m1o")
+hframes = 9
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1775403395]
+position = Vector2(-8.265, -23.8)
+rotation = 3.1415927
+scale = Vector2(5.185, 5.185)
+zoom = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=225264730]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_wrlej")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1304105956]
+libraries/ = SubResource("AnimationLibrary_8l8rk")
+autoplay = &"Idle"
+
+[node name="Label" type="Label" parent="." unique_id=1159291205]
+texture_filter = 1
+offset_left = -21.0
+offset_top = -26.0
+offset_right = 23.0
+offset_bottom = -7.0
+theme_override_font_sizes/font_size = 6

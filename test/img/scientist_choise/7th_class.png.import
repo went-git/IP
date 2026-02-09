@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqoo232hvxxux"
-path="res://.godot/imported/test_room.png-8f4d49c67864c322777f3d6eef1ffea1.ctex"
+uid="uid://bqboqj3is6o7f"
+path="res://.godot/imported/7th_class.png-92e1c4d069cf8637668a8e4a78e9b857.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/test_room.png"
-dest_files=["res://.godot/imported/test_room.png-8f4d49c67864c322777f3d6eef1ffea1.ctex"]
+source_file="res://img/scientist_choise/7th_class.png"
+dest_files=["res://.godot/imported/7th_class.png-92e1c4d069cf8637668a8e4a78e9b857.ctex"]
 
 [params]
 
