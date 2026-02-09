@@ -63,8 +63,8 @@ func setup_bottom_panel():
 	label.add_theme_font_size_override("font_size", 28)
 	# Отступы
 	
-	label.add_theme_constant_override("margin_left", 100)
-	label.add_theme_constant_override("margin_right", 40)
+	label.add_theme_constant_override("margin_left", 70)
+	label.add_theme_constant_override("margin_right", 30)
 	label.add_theme_constant_override("margin_top", 25)
 	label.add_theme_constant_override("margin_bottom", 25)
 	

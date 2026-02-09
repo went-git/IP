@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://8nlg4pq3ke7r" path="res://img/nuton_sc1/Nuton_prism.png" id="6_fbu0t"]
 [ext_resource type="Script" uid="uid://b6srf0bagm1yv" path="res://script/newton_sc1/next_room.gd" id="10_03nh7"]
 [ext_resource type="Script" uid="uid://ceaxo80fhy08s" path="res://script/newton_sc1/bookshelf.gd" id="11_wugke"]
+[ext_resource type="Script" uid="uid://uo066exrjxkn" path="res://script/newton_sc1/trigger.gd" id="13_bjd4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0n4pm"]
 size = Vector2(16, 14.5)
@@ -27,6 +28,8 @@ size = Vector2(14.960003, 30.48276)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t03xm"]
 size = Vector2(33, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfnuq"]
 
 [node name="Node2D" type="Node2D" unique_id=319455182]
 
@@ -101,3 +104,10 @@ script = ExtResource("11_wugke")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bookshelf" unique_id=793796427]
 position = Vector2(100.5, -2)
 shape = SubResource("RectangleShape2D_t03xm")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=548417648]
+script = ExtResource("13_bjd4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=124901462]
+position = Vector2(-19, 4)
+shape = SubResource("RectangleShape2D_gfnuq")

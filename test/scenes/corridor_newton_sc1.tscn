@@ -18,7 +18,8 @@ size = Vector2(36, 43)
 [node name="Node2D" type="Node2D" unique_id=997697512]
 
 [node name="NutonCollegeCorridor" type="Sprite2D" parent="." unique_id=1866076124]
-position = Vector2(-315, -20)
+texture_filter = 1
+position = Vector2(-314, -32)
 texture = ExtResource("1_vcwi5")
 
 [node name="CharacterBody2D" parent="." unique_id=158689498 instance=ExtResource("2_yl1e4")]
