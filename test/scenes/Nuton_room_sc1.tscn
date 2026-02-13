@@ -21,7 +21,7 @@ size = Vector2(16, 14.5)
 size = Vector2(16.5, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyclf"]
-size = Vector2(15, 32.25)
+size = Vector2(20, 32.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbu0t"]
 size = Vector2(14.960003, 30.48276)
@@ -66,7 +66,7 @@ texture = ExtResource("4_0rw1p")
 script = ExtResource("4_dyclf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nuton_blue_book" unique_id=1482235501]
-position = Vector2(28.5, 0.875)
+position = Vector2(29, 0.875)
 shape = SubResource("RectangleShape2D_dyclf")
 
 [node name="NutonBook" type="Sprite2D" parent="Nuton_blue_book" unique_id=443083823]

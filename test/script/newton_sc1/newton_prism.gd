@@ -25,7 +25,8 @@ func _on_body_exited(body: Node):
 func interact(player: CharacterBody2D) -> void:
 	var messages = PackedStringArray([
 		"Призма...",
-		"Кажется их использовали ещё в Древней Греции",
+		"Кажется их использовали ещё в Древней 
+		Греции",
 		"...и Риме",
 		"А сейчас пытаюся разложить свет",
 		"Мне это пригодится"
