@@ -8,22 +8,22 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qihg0"]
 size = Vector2(25, 37)
 
-[node name="class_9" type="Node2D"]
+[node name="class_9" type="Node2D" unique_id=995596204]
 
-[node name="9ThClass" type="Sprite2D" parent="."]
+[node name="9ThClass" type="Sprite2D" parent="." unique_id=1540998793]
 texture_filter = 1
-position = Vector2(1, -24)
+position = Vector2(-9, -24)
 texture = ExtResource("1_oxwv6")
 
-[node name="TileMapLayer" parent="." instance=ExtResource("2_sllwb")]
+[node name="TileMapLayer" parent="." unique_id=961017191 instance=ExtResource("2_sllwb")]
 visible = false
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_6dpwa")]
+[node name="CharacterBody2D" parent="." unique_id=857839019 instance=ExtResource("3_6dpwa")]
 
-[node name="door_9" type="Area2D" parent="."]
+[node name="door_9" type="Area2D" parent="." unique_id=1715029624]
 position = Vector2(1, -24)
 script = ExtResource("4_oxwv6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_9" unique_id=1942091308]
 position = Vector2(-0.5, 16.5)
 shape = SubResource("RectangleShape2D_qihg0")

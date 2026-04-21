@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://03ejpcybsehq" path="res://script/newton_sc1/windows.gd" id="4_7r7fy"]
 [ext_resource type="Script" uid="uid://bfrhigd2v6y5y" path="res://script/newton_sc1/window_234.gd" id="5_didwk"]
 [ext_resource type="Script" uid="uid://b84s4gupcnhrs" path="res://script/newton_sc1/painting_4.gd" id="6_7r7fy"]
-[ext_resource type="Script" uid="uid://fiwy8rminbt6" path="res://scenes/room.gd" id="7_0mpjm"]
+[ext_resource type="Script" uid="uid://fiwy8rminbt6" path="res://script/newton_sc1/room.gd" id="7_0mpjm"]
 [ext_resource type="Script" uid="uid://ikdih1u8xr5m" path="res://script/newton_sc1/room_2345678.gd" id="8_umq8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r7fy"]
@@ -14,6 +14,9 @@ size = Vector2(31.5, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_didwk"]
 size = Vector2(36, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mpjm"]
+size = Vector2(26, 23)
 
 [node name="Node2D" type="Node2D" unique_id=997697512]
 
@@ -24,6 +27,8 @@ texture = ExtResource("1_vcwi5")
 
 [node name="CharacterBody2D" parent="." unique_id=158689498 instance=ExtResource("2_yl1e4")]
 position = Vector2(0, -4)
+
+[node name="TileMapLayer_corr" type="TileMapLayer" parent="." unique_id=258195634]
 
 [node name="painting1" type="Area2D" parent="." unique_id=1559739047]
 script = ExtResource("3_m5yot")
@@ -138,3 +143,13 @@ script = ExtResource("8_umq8j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room8" unique_id=442339044]
 position = Vector2(-666, -7)
 shape = SubResource("RectangleShape2D_7r7fy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1086772143]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=591915690]
+position = Vector2(79, 15)
+shape = SubResource("RectangleShape2D_0mpjm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1480311442]
+position = Vector2(-707, 16)
+shape = SubResource("RectangleShape2D_0mpjm")

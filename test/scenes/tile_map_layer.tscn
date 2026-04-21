@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbupx38heo3ve"]
+[gd_scene format=3 uid="uid://bbupx38heo3ve"]
 
 [ext_resource type="Texture2D" uid="uid://b4wwavuhtpk1d" path="res://img/tile.png" id="1_wipo8"]
 
@@ -12,10 +12,10 @@ tile_size = Vector2i(17, 17)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_okeva")
 
-[node name="TileMapLayer" type="TileMapLayer"]
+[node name="TileMapLayer" type="TileMapLayer" unique_id=1846965582]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." unique_id=505849186]
 physics_interpolation_mode = 2
 tile_set = SubResource("TileSet_f3sb7")
 format = 2
-layer_0/tile_data = PackedInt32Array(131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 131066, 0, 0, 131067, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 131065, 0, 0, 131064, 0, 0, 131063, 0, 0, 131062, 0, 0, 131061, 0, 0, 65525, 0, 0, -11, 0, 0, 65527, 0, 0, -9, 0, 0, 65543, 0, 0, 7, 0, 0, -65529, 0, 0)
+layer_0/tile_data = PackedInt32Array(65540, 0, 0, 65539, 0, 0, 65538, 0, 0, 65537, 0, 0, 65536, 0, 0, 131071, 0, 0, 131070, 0, 0, 131069, 0, 0, 131068, 0, 0, 131067, 0, 0, 131066, 0, 0, 131065, 0, 0, 131064, 0, 0, 131063, 0, 0, 131062, 0, 0, 131061, 0, 0, 131060, 0, 0, 131059, 0, 0, 131058, 0, 0, 131057, 0, 0, 131056, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 131055, 0, 0, 131054, 0, 0, 131052, 0, 0, 131051, 0, 0, 131050, 0, 0, 131049, 0, 0, 131048, 0, 0, 131047, 0, 0, 131046, 0, 0, 131045, 0, 0, 65493, 0, 0, -43, 0, 0, 65494, 0, 0, -42, 0, 0, 65527, 0, 0, 7, 0, 0)

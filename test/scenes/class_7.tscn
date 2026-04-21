@@ -16,7 +16,7 @@ size = Vector2(35, 25)
 
 [node name="7ThClass" type="Sprite2D" parent="." unique_id=1937100243]
 texture_filter = 1
-position = Vector2(-11, -24)
+position = Vector2(-9, -24)
 texture = ExtResource("1_4qk4b")
 
 [node name="TileMapLayer" parent="." unique_id=1484973452 instance=ExtResource("2_4qk4b")]
